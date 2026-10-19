@@ -59,6 +59,15 @@ class _HomeState extends State<Home> {
                      Row(
                          mainAxisAlignment: MainAxisAlignment.center,
                          children: [
+                           if (data["flag"] != null && data["flag"].toString().length == 2)
+                             Padding(
+                               padding: const EdgeInsets.only(right: 12.0),
+                               child: CircleAvatar(
+                                 radius: 16,
+                                 backgroundImage: NetworkImage(
+                                     "https://flagcdn.com/w80/${data["flag"]}.png"),
+                               ),
+                             ),
                            Text(data["location"],
                              style: TextStyle(
                                fontSize: 32.0,
